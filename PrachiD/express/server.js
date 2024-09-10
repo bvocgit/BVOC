@@ -7,7 +7,7 @@ app.get('/insert', (req,res)=>{
     // res.write("inserted Successfully");
     res.render('first.ejs',
         {'text': ''});
-    // res.end();
+    res.end();
 
 }
 
