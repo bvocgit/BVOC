@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+</head>
+<style>
+    body {
+        background-color: #EAF6F6;
+    }
+    table, th, td {
+        border: 3px solid black;
+    }
+
+    table {
+        margin-left: 15rem;
+    }
+
+    button {
+        background-color: #EAF6F6;
+    }
+
+    button:hover {
+        background-color: #66BFBF;
+    }
+</style>
+<body>
+    <h1 style="text-align: center; font-weight: 800; font-family:Arial, Helvetica, sans-serif;">User Details</h1>
+    <table style="text-align: center;">
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Username</th>
+        </tr>
+        <% for(user of result) { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.username %></td>
+                <td>
+                    <form method="GET" action="/user/<%=user.id%>/edit">
+                        <button>Edit Username</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/user/<%=user.id%>/delete">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
+

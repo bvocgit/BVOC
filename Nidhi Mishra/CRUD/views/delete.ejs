@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete User</title>
+    <style>
+      body {
+          background-color: #EAF6F6;
+      }
+      h2{
+          text-align: center;
+          margin-top: 10rem;
+      }
+      textarea {
+          margin-left: 42rem;
+      }
+      input {
+          margin-left: 42rem;
+      }
+      button{
+          font-size:medium;
+          margin-left: 42rem;
+      }
+      button:hover {
+          background-color: #66BFBF;
+          color: black;
+      }
+  </style>
+  </head>
+  <body>
+    <h2>To delete this user : <%= user.email %> , enter the password</h2>
+    <form method="POST" action="/user/<%= user.id%>?_method=DELETE">
+      <input placeholder="Enter password to delete" name="password" /><br><br>
+      <button>Delete</button>
+    </form>
+  </body>
+</html>
