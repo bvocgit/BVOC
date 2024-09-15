@@ -1,0 +1,147 @@
+/* Base styles */
+body {
+  background-color: #e0f7fa;
+  color: #790000;
+  font-family: cursive;
+  margin: 0;
+  padding: 0;
+  background: url('/bg2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 400px; /* Reduced width for a smaller appearance */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f3fbd9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow-y: auto;
+  height: 78vh; /* Reduced height */
+  animation: fadeIn 1s ease-out;
+}
+
+h1 {
+  color: #070707;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
+
+button {
+  background-color: #f79c51;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0b753;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px; /* Adjust padding for compact appearance */
+  margin: 5px 0 10px 0;
+  border: 1px solid #eef15c;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 70px; /* Reduced height for compactness */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  padding: 10px; /* Reduced padding */
+  margin-bottom: 10px;
+  border: 1px solid #00796b;
+  border-radius: 5px;
+  background-color: #ffffff;
+  animation: slideIn 0.5s ease-out;
+}
+
+.task-item.low { border-color: #4caf50; }
+.task-item.medium { border-color: #ff9800; }
+.task-item.high { border-color: #f44336; }
+
+.task-content {
+  margin-bottom: 10px;
+}
+
+.task-actions form {
+  display: inline;
+  margin-left: 10px;
+}
+
+.due-date, .category {
+  display: block;
+  margin: 5px 0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container.dark-mode {
+  background-color: #1e1e1e; /* Dark background for container */
+  color: #e0e0e0;
+}
+
+button.dark-mode {
+  background-color: #007bff;
+  color: #e0e0e0;
+}
+
+button.dark-mode:hover {
+  background-color: #0056b3;
+}
+
+input.dark-mode, textarea.dark-mode, select.dark-mode {
+  background-color: #333; /* Light shade of black */
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.task-item.dark-mode {
+  background-color: #2e2e2e;
+  border-color: #444;
+}
+
+/* Additional dark mode adjustments */
+input[type="text"].dark-mode {
+  background-color: #333; /* Light shade of black */
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+textarea.dark-mode {
+  background-color: #333; /* Light shade of black */
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+select.dark-mode {
+  background-color: #333; /* Light shade of black */
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
