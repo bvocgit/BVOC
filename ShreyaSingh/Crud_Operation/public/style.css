@@ -1,4 +1,4 @@
-/* Base styles */
+
 body {
   background-color: #e0f7fa;
   color: #790000;
@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  max-width: 400px; /* Reduced width for a smaller appearance */
+  max-width: 400px; 
   margin: 20px auto;
   padding: 20px;
   background-color: #f3fbd9;
@@ -18,7 +18,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow-y: auto;
-  height: 78vh; /* Reduced height */
+  height: 78vh; 
   animation: fadeIn 1s ease-out;
 }
 
@@ -44,14 +44,14 @@ button:hover {
 
 input, textarea, select {
   width: 100%;
-  padding: 8px; /* Adjust padding for compact appearance */
+  padding: 8px; 
   margin: 5px 0 10px 0;
   border: 1px solid #eef15c;
   border-radius: 5px;
 }
 
 textarea {
-  height: 70px; /* Reduced height for compactness */
+  height: 70px; 
 }
 
 ul {
@@ -60,7 +60,7 @@ ul {
 }
 
 .task-item {
-  padding: 10px; /* Reduced padding */
+  padding: 10px; 
   margin-bottom: 10px;
   border: 1px solid #00796b;
   border-radius: 5px;
@@ -93,7 +93,7 @@ body.dark-mode {
 }
 
 .container.dark-mode {
-  background-color: #1e1e1e; /* Dark background for container */
+  background-color: #1e1e1e; 
   color: #e0e0e0;
 }
 
@@ -107,7 +107,7 @@ button.dark-mode:hover {
 }
 
 input.dark-mode, textarea.dark-mode, select.dark-mode {
-  background-color: #333; /* Light shade of black */
+  background-color: #333; 
   color: #e0e0e0;
   border-color: #555;
 }
@@ -119,19 +119,19 @@ input.dark-mode, textarea.dark-mode, select.dark-mode {
 
 /* Additional dark mode adjustments */
 input[type="text"].dark-mode {
-  background-color: #333; /* Light shade of black */
+  background-color: #333; 
   color: #e0e0e0;
   border-color: #555;
 }
 
 textarea.dark-mode {
-  background-color: #333; /* Light shade of black */
+  background-color: #333; 
   color: #e0e0e0;
   border-color: #555;
 }
 
 select.dark-mode {
-  background-color: #333; /* Light shade of black */
+  background-color: #333; 
   color: #e0e0e0;
   border-color: #555;
 }

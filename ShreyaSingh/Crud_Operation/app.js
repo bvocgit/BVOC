@@ -21,7 +21,7 @@ db.connect((err) => {
   console.log('Connected to MySQL');
 });
 
-// Route to render the homepage with tasks
+
 app.get('/', (req, res) => {
   const sql = 'SELECT * FROM tasks';
   db.query(sql, (err, results) => {
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Route to add a new task
+
 app.post('/tasks', (req, res) => {
   const { task, comments, priority, due_date, category } = req.body;
   if (!task) {
@@ -43,7 +43,7 @@ app.post('/tasks', (req, res) => {
   });
 });
 
-// Route to delete a task
+
 app.post('/tasks/delete/:id', (req, res) => {
   const { id } = req.params;
   const sql = 'DELETE FROM tasks WHERE id = ?';
@@ -53,7 +53,7 @@ app.post('/tasks/delete/:id', (req, res) => {
   });
 });
 
-// Route to update a task status (mark as completed)
+
 app.post('/tasks/complete/:id', (req, res) => {
   const sql = 'UPDATE tasks SET status = ? WHERE id = ?';
   db.query(sql, ['completed', req.params.id], (err) => {
@@ -62,7 +62,7 @@ app.post('/tasks/complete/:id', (req, res) => {
   });
 });
 
-// Start the server
+
 app.listen(8081, () => {
   console.log('Server started on port 8081');
 });
