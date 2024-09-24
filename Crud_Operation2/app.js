@@ -31,12 +31,12 @@ app.get('/', (req, res) => {
 
 // Route to add a new task
 app.post('/tasks', (req, res) => {
-  const { task, due_date, comments, priority, category } = req.body;
+  const { task} = req.body;
   if (!task) {
     return res.status(400).json({ error: 'Task is required' });
   }
-  const sql = 'INSERT INTO tasks (task, due_date, comments, priority, category) VALUES (?, ?, ?, ?, ?)';
-  db.query(sql, [task, due_date, comments, priority, category], (err) => {
+  const sql = 'INSERT INTO tasks (task) VALUES (?)';
+  db.query(sql, [task], (err) => {
     if (err) return res.status(500).json({ error: err.message });
     res.redirect('/'); 
   });
@@ -53,6 +53,6 @@ app.post('/tasks/delete/:id', (req, res) => {
 });
 
 // Start the server
-app.listen(8080, () => {
-  console.log('Server started on port 8080');
+app.listen(8082, () => {
+  console.log('Server started on port 8082');
 });
