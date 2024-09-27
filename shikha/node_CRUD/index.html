@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Database Management</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e7ebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 30px;
+            color: #212529;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+        button.delete {
+            background-color: #dc3545;
+        }
+
+        button.delete:hover {
+            background-color: #c82333;
+        }
+
+        button.update {
+            background-color: #28a745;
+        }
+
+        button.update:hover {
+            background-color: #218838;
+        }
+
+        button.show {
+            background-color: #17a2b8;
+        }
+
+        button.show:hover {
+            background-color: #138496;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+    <script>
+        function makeRequest(endpoint) {
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => alert(JSON.stringify(data)))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function insertData() {
+            makeRequest('/insert');
+        }
+
+        function deleteData() {
+            makeRequest('/delete');
+        }
+
+        function updateData() {
+            makeRequest('/update');
+        }
+
+        function showData() {
+            makeRequest('/show');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Database Management</h1>
+        <button onclick="insertData()">Insert Data</button>
+        <button class="delete" onclick="deleteData()">Delete Data</button>
+        <button class="update" onclick="updateData()">Update Data</button>
+        <button class="show" onclick="showData()">Show Data</button>
+        
+    </div>
+</body>
+</html>
