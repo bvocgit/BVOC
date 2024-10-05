@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #020405;
+    color: #fff;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('') ;
+    background-size: cover;
+    background-position: right;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+    height: 100px;
+    margin-left: 50px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+nav ul li a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.05sec;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+    
+}
+
+.header-text{
+    margin-top: 10%;
+    font-size: 30px;
+    margin-left: 50px;
+    float: left;
+    width: 50%
+}
+
+ #header-img img{
+    float: right;
+    width: 350px; 
+     margin-left: 30px; 
+    margin-right: 40px; 
+}
+
+
+
+
+.header-text h1{
+    margin-top: 5%;
+    font-size: 60px;
+    margin-top: 50px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+
+/* --------about------------------- */
+
+#about{
+    padding: 80px 0;
+    color: #ababab;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    margin-left: 50px;
+    width: 80%;
+    border-radius: 15px;
+    height: 80%;
+}
+
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.subtitle{
+    font-size: 60px;
+    color: white;
+    font-weight: 600;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: #ff004f;
+    font-size: 25px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* ----------------Projects------------ */
+
+#projects{
+    padding: 30px 0;
+}
+
+.projects-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.projects-list img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.projects-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition:   background 0.5s, transform 0.5s;
+}
+
+.projects-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+
+.projects-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.projects-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+/* 
+------Contact------------- */
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5);
+}
+
+.btn btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input,textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+/* form .btn2{
+    padding: 14px 0px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #ff004f;
+} */
+
+.btn{
+    background-color: #ff004f;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+    <div id="header">
+        <div id="container">
+            <nav>
+                <img src="images/download (23).jpg" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Frontend Developer</p>
+                <h1>Hi! I am <span>Gulshan Perween</span><br> a Frontend Developer</h1>
+              
+            </div>
+
+            <div id="header-img">
+                <img src="/public/bg1.png">
+            </div>
+            
+               
+        </div>
+    </div>
+<!-- -------about----------- -->
+    <div id ="about">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/IMG_9470.JPG">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p>Hi, I'm a dedicated frontend developer with a deep passion for creating immersive and interactive web experiences. I am pursuing B.Voc Web Designing from Kalindi College, University of Delhi.
+
+                    I began my journey in web development with a fascination for how digital interfaces could transform user interactions. Over the years, I’ve developed a strong foundation in HTML, CSS, and JavaScript, and I’ve also good knowledge of Wordpress, Reacts Js.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Frontend Development</span> 
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            
+                        <li><span>Frameworks & Libraries</span>
+                            <li>Reactjs</li>
+                            <li>Django</li>
+                            <li>Angular Js</li>
+                            
+                       <li><span>Tools & Software</span>
+                            <li>Ms Excel</li>
+                            <li>WordPress</li>
+                            <li>Git & Github</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>Tenth (Schooling)</span>
+                            <li>Institute: MS Badopur, Aurangabad Bihar</li>
+                            <li>Year: 2019</li>
+                            <li>GPA/Marks(%): 87.2%</li>
+                            
+                            
+                        <li><span>Twelveth</span>
+                            <li>Institute: Dr VKS College, Aurangabad Bihar</li>
+                            <li>Year: 2021</li>
+                            <li>GPA/Marks(%): 77.4%</li>
+                            
+                            
+                        </li>
+                        <li><span>Degree/Course: B.voc Web Designing</span>
+                            <li>Institute: Kalindi College, University Of Delhi</li>
+                            <li>Year: 2022-2025</li>
+                            <li>GPA/Marks(%): 7.5</li>
+                            
+                        </li>
+
+                       
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Experience">
+                    <ul>
+                        <!-- <li><span>UI$UX</span> <br>Designing web app interfaces</li>
+                        <li><span>UI$UX</span> <br>Designing web app interfaces</li>
+                        <li><span>UI$UX</span> <br>Designing web app interfaces</li> -->
+
+                       
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects">
+        <div class="container">
+            <h1 class="subtitle"><marquee>My Projects</marquee></h1>
+            <div class="projects-list">
+                <div>
+                    <img src="images/6832207.jpg">
+                    <h2>An Ecommerce Website</h2>
+                    <p>Developed an E-Commerce Website  of a clothing brand using HTML and CSS.</p>
+                    <a href="https://gulshan-perween.github.io/E-Commerce-website/">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/3062524.jpg">
+                    <h2>Animated Website</h2>
+                    <p>Developed an interactive website with engaging scrolling animations and canvas-based graphics using HTML, CSS, and JavaScript. The site features smooth transitions and parallax effects that respond to user interactions, providing a visually immersive experience.
+                        used- HTML, CSS JavaScript
+                    </p>
+                    <a href="https://gulshan-perween.github.io/3D-website/">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/5702614.jpg">
+                    <h2>Math Quiz Website</h2>
+                    <p>Developed an interactive math quiz website using HTML, CSS, and JavaScript, incorporating various question types
+                        for user engagement and learning, which calculates and shows scores at the end. You can find the code here and the
+                        site here.
+                        – used: HTML, CSS, JS</p>
+                    <a href="https://gulshan-perween.github.io/maths_quiz/">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/Origami_04-01.jpg">
+                    <h2>TextConverter</h2>
+                    <p>Developed a TextConverter using Reactjs , add different functionality  such as converting the text into uppercase , lowercase, clears the text. It also shows the time taken to read the text and also  count the number of letters and words  in the given text.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/2002.i305.026_realistic weather forecast mobile application app.jpg">
+                    <h2>Dynamic web application utilizing AngularJS</h2>
+                    <p>Fetching and displaying real-time data from external APIs. Implemented features such as country selection, Flag, population statistics, and currency information, showcasing proficiency in front-end development and API integration. Demonstrated ability to create responsive and interactive user interfaces for data-driven applications.
+                        – used: Angular JS, APIs, HTML, JS,CS.</p>
+                    <a href="https://github.com/Gulshan-Perween/country_info">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/CV-Template-01.jpg">
+                    <h2>Portfolio Website</h2>
+                    <p>Developed a portfolio website using WordPress. This website is a personal showcase of my skills, projects, and accomplishments as a frontend developer. Used the Astra theme for its clean, responsive design and customization flexibility and Elementor plugin.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/beautiful-girl-standing-viewpoint-koh-nangyuan-island-near-koh-tao-island-surat-thani-thailand.jpg">
+                    <h2>Travel Landing Page</h2>
+                    <p>Developed a  demo landing page of travel & tourist Company usind wordpress. Used astra theme and elementor plugin.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <img src="images/top-view-black-calculator-female-hands-black-table-free-space.jpg">
+                    <h2>A simple Calculator</h2>
+                    <p>Designed and built a calculator to do addition, subtraction, multiplication, and division, which takes input from on-screen keyboard and shows result on screen after a click on ”=” and clears input on click on ”C”.
+
+                        – used: HTML, CSS, JS</p>
+                    <a href="https://gulshan-perween.github.io/Calculator/">Learn more</a>
+                    
+                </div>
+                <div>
+                    <img src="images/WhatsApp Image 2024-08-05 at 2.32.44 PM.jpeg">
+                    <h2>KSIX International</h2>
+                    <p>Developed a another landing page of a hair company using WordPress on the localhost. Here I used a Theme and customize it according to the Client need using Elementor Plugin.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- -----------------contact---------------  -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <br>
+                    <br>
+                    <p><i class="fa-solid fa-envelope"></i>perweengulshan56@gmail.com</p>
+                    <br>
+                    <p><i class="fa-solid fa-phone"></i>6207957470</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/gulshan_n00r/?next=%2F"><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-square-facebook"></i></i></a>
+                        <a href="https://www.linkedin.com/in/gulshan-perween-84aa53261/
+                        
+                        "><i class="fa-brands fa-linkedin-in"></i></i></a>
+                        
+                    </div>
+                    <a href="images/Resume_Gulshan (4).pdf" download class="btn">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <br>
+                        <br>
+                        <input type="email" name="email" placeholder="Your Email" required><br>
+                        <br>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <br>
+                        <button type="submit" class="btn">Submit</button><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright @ Gulshan. </p>
+        </div>
+    </div>
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+    </script>
+</body>
+</html>
