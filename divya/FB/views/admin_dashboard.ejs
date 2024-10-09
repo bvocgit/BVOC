@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <a href="/admin-logout">Logout</a>
+
+    <h2>All Feedback Responses</h2>
+    <table border="1">
+        <tr>
+            <th>Category</th>
+            <th>Confidential</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Feedback</th>
+        </tr>
+        <% feedbacks.forEach(function(feedback) { %>
+            <tr>
+                <td><%= feedback.category %></td>
+                <td><%= feedback.confidential %></td>
+                <td><%= feedback.name || 'Anonymous' %></td>
+                <td><%= feedback.email || 'Hidden' %></td>
+                <td><%= feedback.feedback %></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

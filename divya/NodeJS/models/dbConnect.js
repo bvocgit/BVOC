@@ -1,6 +1,5 @@
 var mongoose  = require('mongoose');
 
-mongoose.connect('mongodb:');
 
 var postSchema = new mongoose.Schema({
     title: String,

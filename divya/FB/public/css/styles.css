@@ -1,0 +1,122 @@
+/* General styling for body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Styling for form container */
+.form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Form heading */
+.form-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for labels */
+label {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styling for inputs, textareas, and select fields */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus styling for inputs and textarea */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Styling for buttons */
+button.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Small adjustments for mobile screens */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 30px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select,
+    button.submit-btn {
+        font-size: 13px;
+    }
+
+    .form-container h1 {
+        font-size: 20px;
+    }
+}
+
+/* Aesthetic additions */
+.form-container select,
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    background-color: #f9fbfd;
+    border: 1px solid #ced4da;
+}
+
+.form-container select:hover,
+.form-container input[type="text"]:hover,
+.form-container input[type="email"]:hover,
+.form-container textarea:hover {
+    border-color: #007bff;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
