@@ -1,0 +1,15 @@
+{
+"name": "student-management-system",
+"version": "1.0.0",
+"main": "src/server.js",
+"scripts": {
+  
+  "devstart": "server.js"
+},
+"author": "",
+"license": "ISC",
+"dependencies": {
+  "nodemon": "^2.0.4",
+  "mysql2": "^2.1.0"
+}
+}

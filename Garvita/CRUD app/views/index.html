@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD app</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="student-list">
+    <h1>Student Portal</h1>
+
+    <!-- Insert Form -->
+    <form id="insert-form">
+        <label for="roll_no">Roll No:</label>
+        <input type="number" id="roll_no" name="roll_no" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Buttons for Actions -->
+    <button id="show-btn">Show All Students</button>
+    <button id="delete-btn">Delete Student</button>
+    <button id="update-btn">Update Student</button>
+
+    <!-- Student Response/Results Section -->
+    <div id="student-response"></div>
+  </div>
+
+  <script>
+    const insertForm = document.getElementById('insert-form');
+    const showBtn = document.getElementById('show-btn');
+    const deleteBtn = document.getElementById('delete-btn');
+    const updateBtn = document.getElementById('update-btn');
+    const studentResponse = document.getElementById('student-response');
+
+    // Insert Student Handler
+    insertForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const rollNo = document.getElementById('roll_no').value;
+      const name = document.getElementById('name').value;
+      const course = document.getElementById('course').value;
+
+      // Ensure no field is empty
+      if (!rollNo || !name || !course) {
+        alert('Please fill out all fields');
+        return;
+      }
+
+      // Send the POST request to insert the student
+      fetch('/insert', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          roll_no: rollNo,
+          name: name,
+          course: course
+        })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to insert student');
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        alert('Student inserted successfully!');
+        insertForm.reset();  // Clear form after successful submission
+      })
+      .catch(error => {
+        console.error('Insert Error:', error);
+        alert('Failed to insert student.');
+      });
+    });
+
+    // Show All Students Handler
+    showBtn.addEventListener('click', () => {
+      fetch('/show')  // Fetch all students from the backend
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to fetch students');
+          return response.json();
+        })
+        .then(data => {
+          if (data.length === 0) {
+            studentResponse.innerHTML = '<p>No students found.</p>';
+            return;
+          }
+
+          // Create HTML for student list
+          const studentListHTML = `
+            <h1>Student List</h1>
+            <ul>
+              ${data.map(student => `
+                <li>
+                  <h3>${student.name}</h3>
+                  <p>Roll No: ${student.roll_no}</p>
+                  <p>Course: ${student.course}</p>
+                </li>
+              `).join('')}
+            </ul>
+          `;
+
+          // Display the student list in the 'student-response' div
+          studentResponse.innerHTML = studentListHTML;
+        })
+        .catch(error => {
+          console.error('Fetch Error:', error);
+          studentResponse.innerHTML = '<p>Error loading students.</p>';
+        });
+    });
+
+    // Delete Student Handler
+    deleteBtn.addEventListener('click', () => {
+      const id = prompt('Enter the Roll No of the student to delete:');
+      
+      if (!id) {
+        alert('Please provide a valid Roll No');
+        return;
+      }
+
+      fetch('/delete', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ roll_no: id })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to delete student');
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        alert('Student deleted successfully');
+      })
+      .catch(error => {
+        console.error('Delete Error:', error);
+        alert('Failed to delete student.');
+      });
+    });
+
+    // Update Student Handler
+    updateBtn.addEventListener('click', () => {
+      const id = prompt('Enter the Roll No of the student to update:');
+      const name = prompt('Enter the new name:');
+      const course = prompt('Enter the new course:');
+
+      if (!id || !name || !course) {
+        alert('Please fill out all fields');
+        return;
+      }
+
+      fetch('/update', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          roll_no: id,
+          name: name,
+          course: course
+        })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to update student');
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        alert('Student updated successfully');
+      })
+      .catch(error => {
+        console.error('Update Error:', error);
+        alert('Failed to update student.');
+      });
+    });
+  </script>
+</body>
+</html>
