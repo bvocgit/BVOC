@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Username</title>
+</head>
+<style>
+    body {
+        background-color: #EAF6F6;
+    }
+    h2{
+        text-align: center;
+        margin-top: 10rem;
+    }
+    textarea {
+        margin-left: 42rem;
+    }
+    input {
+        margin-left: 42rem;
+    }
+    button{
+        font-size:medium;
+        margin-left: 42rem;
+    }
+    button:hover {
+        background-color: #66BFBF;
+        color: black;
+    }
+</style>
+<body>
+    <h2>You are about to edit this user : <%= user.email %></h2>
+    <form method="post" action="/user/<%=user.id%>?_method=PATCH">
+        <textarea name="username"> <%= user.username %></textarea><br><br>
+        <input type="password" name="password" placeholder="enter password" /><br><br>
+        <button>Edit</button>
+    </form>
+</body>
+</html>
+<!-- Edit req : -->
+<!-- patch req -> some part will be edited -->
+ <!-- put req -> whole edited -->
