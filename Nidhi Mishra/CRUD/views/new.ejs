@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New User</title>
+    <style>
+      body {
+          background-color: #EAF6F6;
+      }
+      h2{
+          text-align: center;
+          margin-top: 10rem;
+      }
+      textarea {
+          margin-left: 42rem;
+      }
+      input {
+          margin-left: 42rem;
+      }
+      button{
+          font-size:medium;
+          margin-left: 42rem;
+      }
+      button:hover {
+          background-color: #66BFBF;
+          color: black;
+      }
+  </style>
+  </head>
+  <body>
+    <h2>Fill the details to join us</h2>
+    <form action="/user/new" method="POST">
+      <input name="email" type="email" placeholder="Enter email" /> <br /> <br />
+      <input name="username" type="text" placeholder="Enter usernmae" /><br /><br />
+      <input name="password" type="password" placeholder="Enter password" /><br /><br />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

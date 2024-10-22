@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Portfolio</title>
+    <link rel="stylesheet" href="views/style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:darkgrey;
+    color: #333;
+ }
+ 
+ header {
+    background-color:#333;
+    color:coral;
+    padding: 20px 0;
+    text-align: center;
+    
+ }
+ 
+ nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+ }
+ 
+ nav ul li {
+    display: inline;
+    margin: 0 15px;
+ }
+ 
+ nav ul li a {
+    color:black;
+    text-decoration: none;
+ }
+ 
+ section {
+    padding: 20px;
+    margin: 20px;
+    background-color:beige;
+ }
+ 
+ .project {
+    margin-bottom: 10px;
+ }
+ 
+ .contact {
+    margin: 10px;
+    padding: 10px;
+    border: 20px;
+ }
+ footer {
+    text-align: center;
+    padding: 2px;
+    background-color:#333;
+    color:coral;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+ }
+ 
+    </style>
+
+</head>
+<body>
+    <h1><%=text %></h1>
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9dlSn_XIs_1gxPSo1OInwe39mFqKQK4F1Q&s">
+        <h1> I Am Priya</h1>
+
+    </header>
+    <br>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </section>
+
+    <section id="about">
+        <h2><b>About Me</b></h2>
+        <p> Hello! I'm  a web developer with  a passion for a creating awesome websites.</p>
+    </section>
+
+    <section id="project">
+    <h2><b>My Projects</b></h2>
+    <div class="project">
+        <h3>Project 1 </h3>
+        <p> Portfolio using express js</p>
+    </div>
+
+    </section>
+
+  ` <section id="contact">
+        <h2><b>Contact Me</b></h2>
+        <p> email : priya19.2k5@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+</body>
+</html>
