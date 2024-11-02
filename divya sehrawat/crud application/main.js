@@ -37,7 +37,7 @@ app.set("view engine","ejs");
 
 
 app.get('/',(req,res)=>{
-    res.send("Hello world");
+    res.send("hello world");
 });
 
 //router prefix
