@@ -12,7 +12,7 @@
 	margin: 0;
 	padding: 0;
 	-outline: 0;
-	font-family Roboto, sans-serif, arial;
+	font-family : Roboto, sans-serif, arial;
 }
 html, body 
 	{
@@ -67,7 +67,7 @@ nav a {
 .width-50 {
 	float: left;
 	width: 50%;
-  length: 5px;
+  /* length: 5px; */
 }
 .banner-section {
 	width: 100%;
@@ -158,6 +158,23 @@ div[role="progressbar"] {
 	color: #b3b3b3;
 }
 
+.about-img {
+  flex: 1;
+  max-width: 50%;
+  text-align: right;
+  align-items: end;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #ff6347;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  margin-top: 50px;
+  margin-left: 50px;
+}
 
 </STYLE> 
 </head>
@@ -195,7 +212,7 @@ div[role="progressbar"] {
 <div class="main-section bg-lightgrey">
   <div class="container">
     <div class="width-50">
-      <img src="images/about-us.png" class="about-img">
+      <img src="https://i.pinimg.com/736x/14/63/64/1463646ef76b0664d6acbe4896cbddc8.jpg" class="about-img">
     </div>
     <div class="width-50">
       <div class="about-us">
@@ -285,7 +302,7 @@ div[role="progressbar"] {
 <!------FOOTER SECTION------>
 <div class="footer">
   
-    <div class="footer-sect mt-20 width-50">CopyRight © 2024 Akshima.com Website. All Rights Reserved</div>
+    <div class="footer-sect mt-20 width-50" style="text-align:right;">CopyRight © 2024 Akshima.com Website. All Rights Reserved</div>
   </div>
 </div>
 </body>
