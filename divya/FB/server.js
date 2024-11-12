@@ -1,13 +1,7 @@
 var express = require('express');
 var path = require("path");
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
 var Feedback = require('./models/feedback');
-var session = require('express-session');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var bcrypt = require('bcryptjs');
-var flash = require('connect-flash');
 
 
 mongoose.connect("mongodb+srv://Divya0405:Divya0405@meradb.z2dszqk.mongodb.net/", {
@@ -33,97 +27,13 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('views'));
 
-app.use(session({secret: 'your_secret_key', resave: false, saveUninitialized: true}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-
-app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
     // res.sendFile(__dirname + '/views/index.html');
     res.render('index.ejs', {
         'text' : ""
-    });
-});
-
-// Middleware to handle POST data
-var adminUser = {
-    userName : 'admin',
-    password : bcrypt.hashSync('adminpassword', 10)
-};
-
-// Passport local strategy for admin login
-passport.use(new LocalStrategy(
-    function(userName, password, done) {
-        if (userName === adminUser.userName) {
-            bcrypt.compare(password, adminUser.password, (err, isMatch) => {
-                if (err) return done(err);
-                if (isMatch) return done(null, adminUser);
-                return done(null, false, { message : 'Incorrect Password !'});
-
-            });
-        } else {
-            return done(null, false, { message: 'Incorrect Username !'});
-        }
-    }
-));
-
-// Serialize and deserialize admin user
-passport.serializeUser((user, done) => done(null, user.userName));
-passport.deserializeUser((userName, done) => {
-
-    if (userName === adminUser.userName) {
-        done(null, adminUser);
-    } else {
-        done(null, false);
-    }
-});
-
-// Middleware to protect admin routes
-function ensureAuth(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    } 
-    res.redirect('/admin-login');
-}
-
-// Admin login route
-app.get('/admin-login', (req, res) => {
-    // res.sendFile(__dirname + 'views\admin_login.ejs');
-    res.render('admin_login', {
-        'text' : ""
-    });
-});
-
-app.post('/admin-login', 
-    passport.authenticate('local', {
-        successRedirect: '/admin-dashboard',
-        failureRedirect: '/admin-login',
-        failureFlash: true
-    })
-);
-
-// Admin dashboard (show all feedbacks)
-app.get('/admin-dashboard', ensureAuth, (req, res) => {
-    // Fetch all feedbacks from MongoDB and render the page
-    feedback.find({}, (err, feedbacks) => {
-        if (err) {
-            res.status(500).send("Failed to retrieve Feedbacks !!");
-        } else {
-            res.render('/admin-dashboard', {feedbacks: feedbacks });
-        }
-    });
-});
-
-// Admin logout
-app.get('/admin-logout', (req, res) => {
-    req.logout((err) => {
-        if (err) return next(err);
-        res.redirect('/admin-login');
     });
 });
 
