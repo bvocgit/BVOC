@@ -10,6 +10,7 @@ var con = mysql.createConnection({
   database: 'Student_db'
 });
 
+
 con.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err);
@@ -18,16 +19,16 @@ con.connect((err) => {
   console.log('Connected to the database.');
 });
 
-// Middleware to serve static files and parse JSON
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-// Serve the HTML file
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// Route to insert a new student
+
 app.post('/insert', (req, res) => {
   const { roll_no, name, course } = req.body;
   const insertQuery = 'INSERT INTO student (roll_no, name, course) VALUES (?, ?, ?)';
@@ -42,7 +43,7 @@ app.post('/insert', (req, res) => {
   });
 });
 
-// Route to show all students
+
 app.get('/show', (req, res) => {
   const selectQuery = 'SELECT * FROM student';
 
@@ -56,9 +57,9 @@ app.get('/show', (req, res) => {
   });
 });
 
-// Route to delete a student
+
 app.post('/delete', (req, res) => {
-  const { roll_no } = req.body;  // Assuming roll_no is the unique identifier for deletion
+  const { roll_no } = req.body; 
   const deleteQuery = 'DELETE FROM student WHERE roll_no = ?';
 
   con.query(deleteQuery, [roll_no], (err, result) => {
@@ -71,7 +72,7 @@ app.post('/delete', (req, res) => {
   });
 });
 
-// Route to update a student's details
+
 app.post('/update', (req, res) => {
   const { roll_no, name, course } = req.body;
   const updateQuery = 'UPDATE student SET name = ?, course = ? WHERE roll_no = ?';
@@ -86,7 +87,7 @@ app.post('/update', (req, res) => {
   });
 });
 
-// Start the server
+
 app.listen(8064, () => {
   console.log('Server is running on http://localhost:8064/');
 });
