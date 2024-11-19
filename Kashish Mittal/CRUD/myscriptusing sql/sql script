@@ -5,16 +5,16 @@ CREATE TABLE `employee_db`.`employees` (
   `employee_code` varchar(45) DEFAULT NULL,
   `salary` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 -- insert 4 employee
-LOCK TABLES `employee_db`.`employees` WRITE;
+
 INSERT INTO `employee_db`.`employees` VALUES 
 (1,'Samantha Mackenzie','EMP97',80000),
 (2,'Layla Benn','EMP91',92000),
 (3,'Luis Alberto','EMP99',84000),
-(4,'Rishaan','EMP70',85000);
-UNLOCK TABLES;
+(4,'Rishaan','EMP70',85000)
+;
 
 -- stored procedure - execute withing create procedure window
 CREATE PROCEDURE `employee_db`.`usp_employee_add_or_edit` (

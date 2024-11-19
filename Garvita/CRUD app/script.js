@@ -4,6 +4,7 @@ const deleteBtn = document.getElementById('delete-btn');
 const updateBtn = document.getElementById('update-btn');
 const studentList = document.getElementById('student-list');
 
+
 insertForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const rollNo = document.getElementById('roll_no').value;

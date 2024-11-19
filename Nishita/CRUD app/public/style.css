@@ -1,0 +1,116 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Title Styles */
+.title {
+    font-size: 2.5em;
+    color: #444;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+/* User Grid Layout */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Username */
+.card-username {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* Card Image */
+.card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Card Description */
+.card-description {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Card Links */
+.card a {
+    display: inline-block;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #0056b3;
+}
+
+/* Edit Button */
+.card form button {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card form button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .user-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
