@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+</head>
+<body>
+    <h1><%=text %></h1> 
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            background-color: #fdfdfd;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #444;
+            color: #fdfdfd;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fdfdfd;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #bbb;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project {
+            background-color: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .project p {
+            margin-top: 0.5rem;
+            color: #666;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form input, form textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            padding: 1rem;
+            background-color: #333;
+            color: #fdfdfd;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #fdfdfd;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="intro">
+        <h1>Anamta</h1>
+        <p>Web Designer</p>
+    </div>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+ Hello! I'm Anamta , a passionate UI/UX and a web designer student dedicated to creating intutive and 
+ engaging digital experiences . My journey into the world of design began with a fascination for how 
+ thoughtful design can transform user interactions and solve real-world problems.  
+ Currently pursuing my studies in bachelors of vocation (web designing) at kalindi college Delhi
+ University . I'm honing my skilss in user-centered design, wireframing, prototyping, and front-end 
+ development. I thrive on blending creativity with functionality to craft seamless user experience.
+   </p>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Reimagined Library </h3>
+            <p>Designing for Modern Users</p>
+        </div>
+        <div class="project">
+            <h3>Connect and Discover</h3>
+            <p>Enhancing Local Library Experience</p>
+        </div>
+        <div class="project">
+            <h3>Steamline</h3>
+            <p>A Library Website Revamp</p>
+        </div>
+        <div class="project"> 
+            <h3>The Digital Library</h3>
+            <p> User-Centric Redesign</p>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form action="#" method="POST">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© Anamta | <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+</footer>
+
+</body>
+</html>

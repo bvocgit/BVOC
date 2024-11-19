@@ -1,0 +1,283 @@
+<!-- <html>
+  <h1>HEllO WORLD(hard code)</h1>
+  <h1><%=locals.text %></h1>
+</html> -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/2156922b85.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="/image/LOGO.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+            <!-- <i class="fas fa-times" onclick="closemenu()"></i> -->
+          </ul>
+          <!-- <i class="fas fa-bars" onclick="openmenu()"></i> -->
+        </nav>
+        <div class="header-text">
+          <p>Frontend Developer</p>
+          <h1>
+            Hi, I'm <span>Alpana </span><br />
+            From Delhi.
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!----about---------------------------------------------------->
+
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <h1 class="sub-title">About Me</h1>
+          <p>
+            Hello! I'm Alpana, a passionate frontend developer with a keen eye
+            for design and a love for creating delightful user experiences.I
+            specialize in crafting responsive websites and web applications
+            using modern technologies like HTML5, CSS3, JavaScript, and
+            frameworks/libraries such as React and Next js.<br />
+            Feel free to explore my portfolio to see some of my recent projects.
+            If you're looking for a frontend developer who is dedicated to
+            quality and creativity, let's connect!
+          </p>
+          <div class="about-col1">
+            <img src="/image/about.jpg" width="400px" />
+          </div>
+          <div class="about-col2">
+            <div class="tab-titles">
+              <p class="tab-links"><u>Skills</u></p>
+            </div>
+            <div class="tab-contents">
+              <ul>
+                <li><span>HTML5</span><br />Advanced level</li>
+                <li><span>CSS</span><br />Advanced level</li>
+                <li><span>Javascript</span><br />Intermediate level</li>
+                <li><span>JQuery</span><br />Intermediate level</li>
+                <li><span>React Js</span><br />Beginner level</li>
+                <li><span>Next Js</span><br />Beginner level</li>
+                <li><span>PHP</span><br />Intermediate level</li>
+                <li><span>Next Js</span><br />Beginner level</li>
+                <li><span>Python</span><br />Intermediate level</li>
+                <li><span>MySQL</span><br />Advanced level</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="about-col3">
+            <div class="tab-titles">
+              <p class="tab-links"><u>Education</u></p>
+            </div>
+            <div class="tab-contents">
+              <ul>
+                <li>
+                  <span>2022-Present</span><br />B.Voc Web Designing (University
+                  of Delhi)
+                </li>
+                <li>
+                  <span>2020-2022</span><br />Intermidiate(D.A.V Public School)
+                </li>
+                <li>
+                  <span>2019-2020</span><br />Matriculation(D.A.V Public School)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="about-col4">
+            <div class="tab-titles">
+              <p class="tab-links"><u>Certificate</u></p>
+            </div>
+            <div class="tab-contents">
+              <ul>
+                <li>
+                  <span>Udemy</span><br />The Complete DSA Course using Python
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------services----------------->
+    <div id="Services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fas fa-code"></i>
+            <h2>React JS Developer</h2>
+            <p>
+              I'm enthusiastic about leveraging React.js to create seamless user
+              experiences. In my spare time, I contribute to many projects and
+              explore new front-end techniques.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div>
+            <i class="fas fa-code"></i>
+            <h2>Next Js Developer</h2>
+            <p>
+              We leverage Next.js along with React.js to create robust and
+              scalable web solutions.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+          <div>
+            <i class="fas fa-code"></i>
+            <h2>Python Developer</h2>
+            <p>
+              We're passionate about harnessing Python's capabilities to create
+              innovative solutions that drive business growth and exceed
+              expectations. Our commitment to excellence is reflected in every
+              line of code we write.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----------------portfolio----------->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="/image/E-commerce.png" />
+            <div class="layer">
+              <h3>Amazon-Clone</h3>
+              <p>
+                Here is my First Front End Project. I have used HTML and CSS to
+                built this web page. I have added many styles using css.
+              </p>
+              <a href="<%=locals.Amazon %>"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/image/know-your.png" />
+            <div class="layer">
+              <h3>KNOW-YOUR-WORLD</h3>
+              <p>
+                Here is one website to know information about different
+                countries. i have use API call to fetch the information.
+              </p>
+              <a href="<%=locals.KYW %>"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/image/TIC-TAC.jpg" />
+            <div class="layer">
+              <h3>TIC-TAC-TOE</h3>
+              <p>
+                Here is my third Project. I have used HTML, CSS and Javascript
+                to build this game. This game reminds me my childhood memories.
+                Hope you enjoy this game.
+              </p>
+              <a href="<%locals.TTT %>"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/image/TO-DO.png" />
+            <div class="layer">
+              <h3>TO-DO LIST</h3>
+              <p>
+                Here is my first react app. To-do list can be used to list all
+                the works to do in day to day life.
+              </p>
+              <a href="<%locals.TO_DO_LIST %>"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+
+    <!-----------resume---------------->
+    <div id="resume">
+      <div class="container">
+        <h1 class="sub-title">Resume section</h1>
+        <div class="resume-form">
+          <form>
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="meddage"
+              rows="6"
+              placeholder="Your Message"
+            ></textarea
+            ><br />
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <a href="/image/resume.pdf" download class="btn btn2">Download CV</a>
+        </div>
+      </div>
+    </div>
+    <!--------------------contact------------->
+    <div id="contact">
+      <div class="container">
+        <h1 class="sub-title">Contact Me</h1>
+        <p>
+          <i class="fa-regular fa-envelope"></i>alpanakumariclg123@gmail.com
+        </p>
+        <p><i class="fa-solid fa-phone"></i>+91 9773621693</p>
+        <div class="social-icons">
+          <a href="https://github.com/Alpana-clg"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/alpanakumariclg123/?igsh=OGQ5ZDc2ODk2ZA%3D%3D"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/alpana-kumari-093940220/"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="https://www.facebook.com/profile.php?id=100057299041089"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright © Alpana</p>
+    </div>
+    <!-- <script>
+      var sidemen = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemen.style.right = "0";
+      }
+
+      function closemenu() {
+        sidemen.style.right = "-200px";
+      }
+    </script> -->
+  </body>
+</html>

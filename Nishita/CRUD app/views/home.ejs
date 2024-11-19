@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts</title>
+  <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+  <h2 class="title">insta Posts</h2> 
+  
+ <div class="user-grid">
+    
+   <% data.forEach(user => { %>
+      <dir class="card">
+          <h3 class="card-username"><%= user.username %></h3>
+        <div  class="card-item">
+           <img class="card-image" src ="<%= user.image %>" alt="">
+           <p class="card-description"><%= user.content %></p>
+           <a href="/posts/<%= user.id %>" > See More</a>
+           <form method="get" action="/posts/<%= user.id %>/edit">
+            <button>Edit</button>
+
+           </form>
+           <br> 
+           <form method="post" action="/posts/<%= user.id %>?_method=DELETE">
+           <button>Delete</button>
+          </form>
+        </div>
+      </dir>
+   <% }) %>
+   
+ </div>
+</body>
+</html>

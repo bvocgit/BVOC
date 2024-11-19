@@ -1,0 +1,85 @@
+body{
+  background-color: rgb(177, 223, 239);
+  color: white;
+}
+
+h1{
+  margin-top: -20px;
+  padding: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: rgb(28, 114, 161);
+  text-align: center;
+  border-radius: 5px;
+}
+
+h2{
+  text-align: center;
+  color: rgb(28, 114, 161);
+  margin-bottom: 50px;
+  text-decoration: underline;
+}
+
+.main{
+  margin: 10px 150px;
+  padding: 30px;
+  padding-bottom: 97px;
+}
+
+.a{
+  background-color: rgb(239, 234, 234);
+  padding: 10px 14px;
+  display: flex;
+}
+
+.main P{
+  color: black;
+  flex-basis: 90%;
+  font-size: 18px;
+}
+
+.b{
+  background-color: rgb(160, 196, 238);
+  padding: 9px 14px;
+  display: flex;
+}
+
+.show{
+  background-color: rgb(51, 218, 51);
+  padding: 9px 20px;
+}
+
+.insert{
+  background-color:rgb(238, 169, 40);
+  padding: 10px 17px;
+}
+
+.update{
+  background-color: rgb(235, 235, 12);
+  padding: 10px 15px;
+}
+
+.delete{
+  color: white;
+  background-color: rgb(249, 36, 36);
+  padding: 10px 15px;
+}
+
+button{
+  border: none;
+  border-radius: 5px;
+  margin-top:8px;
+
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+footer{
+  background-color:rgb(28, 114, 161) ;
+  text-align: center;
+  padding: 7px;
+  margin: -9px -8px;
+}
+

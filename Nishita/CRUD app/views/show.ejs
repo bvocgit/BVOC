@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>see details</title>
+    <style>
+       /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Profile Show Container */
+.show {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Profile Username */
+.show h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Profile Image */
+.show img {
+    display: block;
+    max-width: 120px;
+    max-height: 120px;
+    margin: 10px auto;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.show img:hover {
+    transform: scale(1.1);
+}
+
+/* Profile Content */
+.show p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .show {
+        padding: 15px;
+    }
+
+    .show h1 {
+        font-size: 1.8em;
+    }
+
+    .show p {
+        font-size: 1em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="show">
+     <h1 ><%=user.username %></h1>
+     <img src="<%= user.image %>" alt="">
+     <p> <%= user.content%></p>
+    </div>
+</body>
+</html>

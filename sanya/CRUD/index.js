@@ -1,12 +1,13 @@
-var mysql= require ('mysql2');
-const fs= require('fs');
-var ejs= require('ejs');
+const mysql= require ('mysql2');
 const express = require('express');
+const path = require("path");
+const bodyParser = require("body-parser");
+
 const app= express();
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname,"public")));
 
-app.use(express.urlencoded({extended:false}));
-
-app.get('/', (req,res) =>{
+app.get('/show', (req,res) =>{
     con.query('select * from student', (err, results) => {
         if (err) {          
           res.send('Error showing users');
@@ -27,9 +28,9 @@ app.post('/insert',(req,res) =>{
     });
 });
 
-app.delete('/user/:id',(req,res) =>{
-    const userId = req.params.id;
-  con.query('delete from student where id = ?', [userId], (err, result) => {
+app.post('/delete',(req,res) =>{
+    const {id} = req.body;
+  con.query('delete from student where id = ?', [id], (err, result) => {
     if (err) {
       res.send('Error deleting user');
       return;
@@ -38,10 +39,10 @@ app.delete('/user/:id',(req,res) =>{
   });
 });
 
-app.get('/user/update/:id',(req,res) =>{
-    const { name} = req.body;
-  const userId = req.params.id;
-  con.query('UPDATE users SET name = ? WHERE id = ?', [name, userId], (err, result) => {
+app.post('/update',(req,res) =>{
+  const {name} = req.body;
+  const {id} = req.body;
+  con.query('UPDATE student SET name = ? WHERE id = ?', [name, id], (err, result) => {
     if (err) {
       res.send('Error updating user');
       return;
@@ -50,7 +51,12 @@ app.get('/user/update/:id',(req,res) =>{
   });
 });
 
-app.listen(8081);;
+app.get('/',(req,res)=>{
+  const _retfile = path.join(__dirname, 'index.html');
+  res.sendFile(_retfile);
+})
+
+app.listen(8082);;
 
 var con= mysql.createConnection({
     host:"localhost",

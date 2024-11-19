@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Operations</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #2c3e50;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #34495e;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-bottom: 15px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      border: 1px solid #bdc3c7;
+      max-width: 400px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: left;
+      color: #2c3e50;
+    }
+
+    input[type="text"], input[type="number"], input[type="submit"], button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #bdc3c7;
+      box-sizing: border-box;
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    input[type="submit"], button {
+      background-color: #27ae60;
+      color: white;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover, button:hover {
+      background-color: #2ecc71;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+    }
+
+    pre {
+      text-align: left;
+      background-color: #ecf0f1;
+      color: #2c3e50;
+      padding: 15px;
+      border-radius: 5px;
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Media Query for Responsive Design */
+    @media (max-width: 600px) {
+      form {
+        max-width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CRUD Operations</h1>
+
+  <!-- Insert Record Form -->
+  <div>
+    <h2>Insert Record</h2>
+    <form id="insertForm">
+      <label for="employee_no">Employee No:</label>
+      <input type="number" id="employee_no" name="employee_no" required>
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="number">Number:</label>
+      <input type="text" id="number" name="number" required>
+      
+      <input type="submit" value="Insert">
+    </form>
+  </div>
+
+  <!-- Update Record Form -->
+  <h2>Update Record</h2>
+  <form id="updateForm">
+    <label for="updateEmployeeNo">Employee No:</label>
+    <input type="number" id="updateEmployeeNo" name="employee_no" required>
+    
+    <label for="updateName">Name:</label>
+    <input type="text" id="updateName" name="name" required>
+    
+    <label for="updatenumber">Number:</label>
+    <input type="text" id="updatenumber" name="number" required>
+    
+    <input type="submit" value="Update">
+  </form>
+
+  <!-- Delete Record Form -->
+  <h2>Delete Record</h2>
+  <form id="deleteForm">
+    <label for="deleteEmployeeNo">Employee No:</label>
+    <input type="number" id="deleteEmployeeNo" name="employee_no" required>
+    
+    <input type="submit" value="Delete">
+  </form>
+
+  <!-- Show Records Button -->
+  <h2>Show Records</h2>
+  <button id="showButton">Show Records</button>
+  <pre id="records"></pre>
+
+  <script>
+    // Insert Record
+    document.getElementById('insertForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const employee_no = document.getElementById('employee_no').value;
+      const name = document.getElementById('name').value;
+      const number = document.getElementById('number').value;
+
+      fetch('/insert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ employee_no, name, number })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    // Update Record
+    document.getElementById('updateForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const employee_no = document.getElementById('updateEmployeeNo').value;
+      const name = document.getElementById('updateName').value;
+      const number = document.getElementById('updatenumber').value;
+
+      fetch('/update', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ employee_no, name, number })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    // Delete Record
+    document.getElementById('deleteForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const employee_no = document.getElementById('deleteEmployeeNo').value;
+
+      fetch(`/delete?employee_no=${employee_no}`, {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    // Show Records
+    document.getElementById('showButton').addEventListener('click', function () {
+      fetch('/show')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('records').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>

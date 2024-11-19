@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-mysql-crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type" : "module",
+  "scripts": {
+    "test": "nodemon index .js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

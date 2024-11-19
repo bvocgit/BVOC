@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/free-vector/realistic-neon-lights-background_23-2148907367.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .btn {
+
+            justify-content: space-between;
+
+            gap: 10px;
+            display: inline-block;
+            padding-left: 30vw;
+
+
+
+        }
+
+        a button {
+            cursor: pointer;
+            border-radius: 20px;
+            margin: 10px 10px 10px 10px;
+            padding: 7px;
+            width: 100px;
+            color: rgb(49, 49, 211);
+            border-color: aliceblue;
+
+        }
+
+        h2 {
+            color: #1e90ff;
+            text-shadow: 2px 2px #ff6b6b, 4px 4px #3979da;
+            color: aliceblue;
+            align-items: center;
+            padding-top: 10vw;
+            padding-left: 35vw;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 45px;
+            overflow: hidden;
+            border-right: .15em solid #1e90ff;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #1e90ff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CRUD APP</h2>
+    <br>
+    <br>
+
+    <div class="btn">
+        <a href="http://localhost:8081/insert"><button>Insert</button></a>
+
+        <a href="http://localhost:8081/show"><button>Show</button> </a>
+
+        <a href="http://localhost:8081/delete"><button>Delete</button> </a>
+
+        <a href="http://localhost:8081/update"><button>Update</button> </a>
+    </div>
+
+</body>
+
+</html>
