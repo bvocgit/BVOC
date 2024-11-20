@@ -1,0 +1,94 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFDD0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+/* Header */
+h1 {
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Button styles */
+button {
+    background-color: #D2042D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #000000b6;
+}
+
+/* Form container */
+form {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+form h3 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Submit button inside forms */
+form button[type="submit"] {
+    width: 100%;
+}
+
+/* Table container */
+#table {
+    background: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+#table h3 {
+    margin-bottom: 10px;
+    color: #000000a7;
+}
+
+#table div {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#table div:last-child {
+    border-bottom: none;
+}
