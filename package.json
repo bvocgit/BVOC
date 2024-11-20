@@ -1,5 +1,23 @@
 {
+<<<<<<< HEAD
+  "name": "bvoc",
+  "version": "1.0.0",
+  "description": "BVOC Course Assignments and projects submission",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.2",
+    "nodemon": "^3.1.7"
+=======
   "dependencies": {
     "body-parser": "^1.20.3"
+>>>>>>> 50a6c1cdf78525ababcdb19a007b42cef3a5b9be
   }
 }
