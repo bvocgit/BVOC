@@ -5,174 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Portfolio - Akshita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
-      * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
 
-/* Animation to fade in sections on scroll */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+        /* Header Section */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+        header .logo {
+            font-size: 24px;
+            text-transform: uppercase;
+            float: left;
+        }
 
-.project-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 30%;
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6600;
+        }
+
+        /* Hero Section */
+        #hero {
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            background: linear-gradient(to bottom right, rgba(255, 102, 0, 0.9), rgba(255, 158, 87, 0.9)), url('https://via.placeholder.com/1500x800') center/cover no-repeat;
+        }
+
+        #hero h2 {
+            font-size: 48px;
+        }
+
+        #hero p {
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #ff6600;
+            color: #fff;
+            transform: translateY(-3px); /* Adds a small bounce */
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Project Section */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .project-card {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skill Section with Progress Bar */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .skill-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 10px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .progress-bar .progress {
+            height: 100%;
+            background: #ff6600;
+            transition: width 0.5s ease;
+        }
+
+        /* Contact Section */
+        .contact-info {
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 18px;
+    line-height: 2;
 }
 
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-}
-
-header .logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    float: left;
-}
-
-nav {
-    float: right;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #fff;
+.contact-info a {
+    color: #ff6600;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ff6600;
-}
-
-#hero {
-    background-color: #ff6600;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-}
-
-#hero h2 {
-    font-size: 48px;
-}
-
-#hero p {
-    font-size: 24px;
-}
-
-.btn {
-    background-color: #fff;
-    color: #333;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-}
-
-.btn:hover {
-    background-color: #ff6600;
-    color: #fff;
-    transform: translateY(-3px); /* Adds a small bounce */
-}
-
-section {
-    padding: 60px 0;
-}
-
-h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.projects-grid, .skills-grid {
-    display: flex;
-    justify-content: space-between;
-}
-
-.project-card, .skill-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-#back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: none; /* Hidden initially */
-    background-color: #ff6600;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-#back-to-top:hover {
-    background-color: #333;
-}
-
-#back-to-top.visible {
-    display: inline-block; /* Show when visible */
+.contact-info a:hover {
+    color: #e55b00;
 }
 
 
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -193,7 +212,7 @@ footer {
     <section id="hero">
         <div class="container">
             <h2>Hello, I'm Akshita!</h2>
-            <p>UI UX DESIGNER</p>
+            <p>UI/UX Designer</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
@@ -211,15 +230,20 @@ footer {
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>E-Wedding Invites</h3>
-                    <p>An elegant website to create custom wedding invites.</p>
+                    <p>A platform for personalized digital wedding invitations.</p>
                 </div>
-                <div class="project-card">
-                    <h3>QALAKRITI Logo Design</h3>
-                    <p>A branding project with a focus on creativity and design.</p>
-                </div>
+               
                 <div class="project-card">
                     <h3>Portfolio</h3>
-                    <p>A personal portfolio showcasing my web design skills.</p>
+                    <p>A minimalist personal portfolio showcasing my work.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Library Online Booking UI</h3>
+                    <p>A modern UI design for a library booking platform.</p>
+                </div>
+                <div class="project-card">
+                    <h3>CRUD Application</h3>
+                    <p>A full-stack app built with Node.js and React.js showcasing CRUD operations.</p>
                 </div>
             </div>
         </div>
@@ -231,15 +255,52 @@ footer {
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>HTML & CSS</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <h3>JavaScript</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <h3>UX/UI Design</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <h3>Express.js & Node.js</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+                    <div class="skill-card">
+                        <h3>Figma</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                        <div class="skill-card">
+                            <h3>Adobe Photoshop</h3>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                            <div class="skill-card">
+                                <h3>Adobe Illustrator</h3>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                                <div class="skill-card">
+                                    <h3>Adobe XD</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%;"></div>
+                                    </div>
+                                </div>
                 </div>
             </div>
         </div>
@@ -248,67 +309,19 @@ footer {
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <p>Email: akshita@example.com</p>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> <a href="tel:7303420111">7303420111</a></p>
+                <p><strong>Email:</strong> <a href="mailto:akshitajairamani@gmail.com">akshitajairamani@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akshita-jairamani-362a90245" target="_blank">Akshita Jairamani</a></p>
+            </div>
         </div>
     </section>
-    <a href="#hero" id="back-to-top" class="btn">Back to Top</a>
+    
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Akshita's Portfolio. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Akshita Jairamani. All Rights Reserved.</p>
     </footer>
-    <h1>
-      <%=text %>
- </h1>
-<script>
-  // Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
 
-// Trigger fade-in animation when sections come into view
-const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-    threshold: 0.3,
-    rootMargin: "0px 0px -100px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('visible');
-            appearOnScroll.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-// Show "Back to Top" button when scrolled down
-const backToTopButton = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
-
-
-
-</script>
-
-
+    
 </body>
 </html>
