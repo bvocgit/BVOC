@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>CRUD Operations</title>
+</head>
+<body>
+  <h1>CRUD Operations</h1>
+
+  
+  <button onclick="window.location.href='/create-table'">Create Table</button>
+
+ 
+  <form method="POST" action="/insert">
+    <h3>Insert Record</h3>
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <button type="submit">Insert</button>
+  </form>
+
+  
+  <form method="POST" action="/update">
+    <h3>Update Record</h3>
+    <input type="number" name="id" placeholder="ID" required />
+    <input type="text" name="name" placeholder="New Name" required />
+    <input type="email" name="email" placeholder="New Email" required />
+    <button type="submit">Update</button>
+  </form>
+
+  
+  <form method="POST" action="/delete">
+    <h3>Delete Record</h3>
+    <input type="number" name="id" placeholder="ID" required />
+    <button type="submit">Delete</button>
+  </form>
+
+  
+  <button onclick="fetchTable()">Show Table</button>
+  <div id="table"></div>
+
+
+  <script>
+    function fetchTable() {
+      fetch('/show-table')
+        .then(response => response.json())
+        .then(data => {
+          const tableDiv = document.getElementById("table");
+          tableDiv.innerHTML = "<h3>Users Table</h3>";
+          data.forEach(row => {
+            tableDiv.innerHTML += `ID: ${row.id}, Name: ${row.name}, Email: ${row.email}<br>`;
+          });
+        });
+    }
+  </script>
+</body>
+</html>

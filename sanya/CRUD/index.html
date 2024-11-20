@@ -1,0 +1,56 @@
+<html>
+    <head><title>CRUD OPERATION</title></head>
+<body>
+    <h2> CRUD OPERATIONS </h2>
+
+<form method="post" action="/insert">
+    <h4> Enter the data for insert operation:</h4>
+    <input type="number" name="id" placeholder="ID">
+    <input type="text" name="name" placeholder="Name">
+    <button type="submit">INSERT DATA</button>
+    </form>
+
+<form method="post" action="/delete">
+    <h4> Enter the data for delete operation:</h4>
+    <input type="number" name="id" placeholder="ID">
+    <button type="submit">DELETE DATA</button>
+    </form>
+
+<form method="post" action="/update">
+    <h4> Enter the data for update operation:</h4>
+    <input type="text" name="name" placeholder="Name">
+    <input type="number" name="id" placeholder="ID">
+    <button type="submit">UPDATE DATA</button>
+    </form>
+<br>
+
+<button onclick="getData()"> SHOW DATA </button>
+<br><br>
+<table>
+    <tr><td>ID               .</td> <td>NAME</td></tr>
+    <tr id="datadisplay" style="padding: 10px;" ></tr>
+</table>
+<script>
+    async function getData() {
+      try {
+        const response = await fetch('/show');
+        const data = await response.json();
+
+        const table = document.getElementById('datadisplay');
+        data.forEach(row => {
+          const tr = document.createElement('tr');
+          for (let key in row) {
+            const td = document.createElement('td');
+            td.textContent = row[key];
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        });
+      } catch (err) {
+        console.error('Error fetching data:', err);
+      }
+    }
+  </script>
+
+</body>
+</html>

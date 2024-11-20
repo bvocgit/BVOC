@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Operation</title>
+  
+</head>
+<body style="text-align: center;" background ="https://www.shutterstock.com/shutterstock/photos/2190640687/display_1500/stock-vector-school-notebook-background-d-flying-yellow-red-and-blue-paper-airplanes-in-the-sky-with-hand-2190640687.jpg">
+
+  <h1>CRUD Operations</h1>
+  <div>
+  <!-- Insert Record Form -->
+  <h2>Insert Record</h2>
+  <form id="insertForm">
+    <label for="roll_no">Roll No:</label>
+    <input type="number" id="roll_no" name="roll_no" required><br><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="course">Course:</label>
+    <input type="text" id="course" name="course" required><br><br>
+    <input type="submit" value="Insert">
+  </form>
+</div>
+
+  <!-- Update Record Form -->
+  <h2>Update Record</h2>
+  <form id="updateForm">
+    <label for="updateRollNo">Roll No:</label>
+    <input type="number" id="updateRollNo" name="roll_no" required><br><br>
+    <label for="updateName">Name:</label>
+    <input type="text" id="updateName" name="name" required><br><br>
+    <label for="updateCourse">Course:</label>
+    <input type="text" id="updateCourse" name="course" required><br><br>
+    <input type="submit" value="Update">
+  </form>
+
+  <!-- Delete Record Form -->
+  <h2>Delete Record</h2>
+  <form id="deleteForm">
+    <label for="deleteRollNo">Roll No:</label>
+    <input type="number" id="deleteRollNo" name="roll_no" required><br><br>
+    <input type="submit" value="Delete">
+  </form>
+
+  <!-- Show Records Button -->
+  <h2>Show Records</h2>
+  <button id="showButton">Show Records</button>
+  <pre id="records"></pre>
+
+  <script>
+    // Insert Record
+    document.getElementById('insertForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const roll_no = document.getElementById('roll_no').value;
+      const name = document.getElementById('name').value;
+      const course = document.getElementById('course').value;
+
+      fetch('/insert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ roll_no, name, course })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    // Update Record
+    document.getElementById('updateForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const roll_no = document.getElementById('updateRollNo').value;
+      const name = document.getElementById('updateName').value;
+      const course = document.getElementById('updateCourse').value;
+
+      fetch('/update', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ roll_no, name, course })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    // Delete Record
+    document.getElementById('deleteForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const roll_no = document.getElementById('deleteRollNo').value;
+
+      fetch(`/delete?roll_no=${roll_no}`, {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    // Show Records
+    document.getElementById('showButton').addEventListener('click', function () {
+      fetch('/show')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('records').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
