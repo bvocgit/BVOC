@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>CRUD Operations</h2>
+
+        <!-- Form for CRUD Operations -->
+        <form id="crudForm">
+            <div class="input-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="button-group">
+                <button type="button" id="insertBtn">Insert</button>
+                <button type="button" id="showBtn">Show</button>
+                <button type="button" id="updateBtn">Update</button>
+                <button type="button" id="deleteBtn">Delete</button>
+            </div>
+        </form>
+
+        <!-- Output Section -->
+        <div id="output">
+            <h3>Results:</h3>
+            <pre id="results"></pre>
+        </div>
+    </div>
+
+    <script>
+        // Helper function to handle fetch requests
+        async function performCRUD(endpoint, params = {}) {
+            const url = new URL(`http://localhost:8084/${endpoint}`);
+            Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Error:", error);
+                return { message: "Error connecting to the server" };
+            }
+        }
+
+        // Attach event listeners to buttons
+        document.getElementById("insertBtn").addEventListener("click", async () => {
+            const id = document.getElementById("id").value;
+            const name = document.getElementById("name").value;
+            const result = await performCRUD("insert", { id, name });
+            document.getElementById("results").textContent = JSON.stringify(result, null, 2);
+        });
+
+        document.getElementById("showBtn").addEventListener("click", async () => {
+            const result = await performCRUD("show");
+            document.getElementById("results").textContent = JSON.stringify(result, null, 2);
+        });
+
+        document.getElementById("updateBtn").addEventListener("click", async () => {
+            const id = document.getElementById("id").value;
+            const name = document.getElementById("name").value;
+            const result = await performCRUD("update", { id, name });
+            document.getElementById("results").textContent = JSON.stringify(result, null, 2);
+        });
+
+        document.getElementById("deleteBtn").addEventListener("click", async () => {
+            const id = document.getElementById("id").value;
+            const result = await performCRUD("delete", { id });
+            document.getElementById("results").textContent = JSON.stringify(result, null, 2);
+        });
+    </script>
+</body>
+</html>
