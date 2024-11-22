@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+
+    <style>
+        body {
+            background-color: rgb(53, 59, 64);
+            /* background-image: url("https://img.freepik.com/premium-photo/young-software-developer-ai-generated_1059430-18874.jpg?w=740"); */
+            background-size: 102%;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+        }
+
+        header {
+            background-color: #191616;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        h1 {
+            color: #041a3d;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        h2 {
+            font-size: 40px;
+
+        }
+
+        p {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: rgb(81, 98, 112);
+            border: 1px solid rgb(40, 54, 66);
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 0 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            max-width: 50%;
+            color: #000;
+        }
+
+        .about-content h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin: 1rem 0 2rem;
+        }
+
+        /* .about-content .btn {
+            padding: 0.8rem 2rem;
+            background-color: #32cd32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+        } */
+
+        /* .about-content .btn:hover {
+            background-color: #28a428;
+        } */
+
+        .about-image {
+            max-width: 1100%;
+        } 
+
+        .about-image img {
+            max-width: 1100%;
+            height:auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            /* Aligns items vertically centered */
+            /* justify-content: space-between; */
+            /* Space between text and image */
+        }
+
+        /* .about-text {
+            flex: 1;
+            /* Allow the text to take remaining space */
+            /* padding-right: 40px; */
+            /* Space between text and image */
+        /* } */ 
+
+        /* .image {
+            padding-left: 500px;
+            padding-top: 1px;
+
+            opacity: 0.5;
+            flex: 0 0 40%;
+
+        } */
+
+        /* .image img {
+            max-width: 100%;
+            /* Responsive image */
+            /* border-radius: 10px;
+        }*/
+
+        .social-links {
+            /* text-align: center; */
+            margin: 20px 0;
+
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+
+        }
+
+        .social-icon {
+            margin-top: 10px;
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            /* opacity: 0.3; */
+        }
+
+        .contact-section {
+            padding: 2rem 1rem;
+            text-align: center;
+            /* background-color: #f4f4f4; */
+            color: #000;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #4f4a4a7b;
+            padding: 2.0rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 0.8rem 2rem;
+            background-color: #32cd32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .contact-form button:hover {
+            background-color: #28a428;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</li>
+                <li><a href="#about">About</li>
+                <li><a href="#projects">Projects</li>
+                <li><a href="#contact">Contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="about-content">
+        <div class="about-content">
+            <div id="welcome">
+                <h1>
+                    <%=locals.greet%>
+                </h1>
+
+                <div class="about-text">
+                    <p style="font-size: 32px; color: rgb(155, 127, 43);"><b>
+                            <%=msg%>
+                        </b></p>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="/images/about-background.jpg"
+                    alt="Home Background">
+            </div>
+
+            <!-- <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p> -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/your-instagram-id" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                        class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/your-facebook-id" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        alt="Facebook" class="social-icon">
+                </a>
+
+                <a href="https://wa.me/your-whatsapp-number" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                        class="social-icon">
+                </a>
+            </div>
+
+
+            <!-- <div class="image">
+                <img src="https://img.freepik.com/premium-photo/young-software-developer-ai-generated_1059430-18874.jpg?w=740"
+                    height="500px" width="700px">
+
+            </div> -->
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi there! I'm <%=name%>, a dedicated Computer Science
+                student currently studying at <%=university%>. I'm deeply interested
+                    in <%=interest%>.
+
+                        Throughout my academic journey, I've been building my skills in <%=skills%>, and I've worked on
+                            several projects that have helped me apply what I've
+                            learned in the classroom to real-world scenarios. These projects include <%=projects%>.
+
+                                I'm constantly seeking to learn more and improve my skills, whether it's by taking on
+                                new projects,
+                                participating in hackathons, or exploring the latest tech trends. My goal is to continue
+                                growing as a
+                                developer and eventually contribute to creating meaningful and impactful software.
+
+                                Outside of my studies, I enjoy <%=hobbies%>. I'm always eager to connect with others,
+                                    collaborate on projects, and learn from new
+                                    experiences.</p>
+    </section>
+
+    <section id="projects" style=" padding: 60px 20px; text-align: center;">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>CRUD PROJECT</h3>
+                <p>It's a student management website for showing crud operation, create using Node.js,Html,Css,Js</p>
+            </div>
+            <div class="project">
+                <h3>Personal Protfolio</h3>
+                <p>It's a portfolio website, create using express.js,html,css</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or opportunities, feel free to reach out to me!</p>
+            <form action="/contact" method="POST" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

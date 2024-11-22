@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Muskan",
+  "license": "ISC",
+  "description": "muskan's portfolio",
+  "dependencies": {
+    "express": "^4.21.1",
+    "npm": "^10.9.0"
+  }
+}
