@@ -10,13 +10,13 @@ router.get('/insert',(req,res) =>{
 
 router.get('/delete',(req,res) =>{
     res.status(200);
-    res.write('divya');
+    res.write('akshima');
     res.end();
 });
 
 router.get('/show',(req,res) =>{
     res.status(200);
-    res.write('vanshita');
+    res.write('anamta');
     res.end();
 });
 
