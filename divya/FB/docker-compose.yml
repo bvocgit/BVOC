@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  feedback-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map container port to host port
+    environment:
+      - MONGO_URI="mongodb+srv://Divya0405:Divya0405@meradb.z2dszqk.mongodb.net/"
