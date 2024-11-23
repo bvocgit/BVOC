@@ -1,0 +1,7 @@
+database => collections 
+
+mongodb installation 
+mongodb connection
+schema 
+model
+CRUD operatiions 

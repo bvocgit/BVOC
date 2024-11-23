@@ -1,0 +1,72 @@
+@font-face {
+    font-family: myfont;
+    src: url(/font.ttf.otf);
+}
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+}
+p{
+    color:orange;
+    text-align: center;
+
+}
+.button{
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: wheat;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 120px;
+
+}
+option {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+select {
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    width: 200px; 
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 1; 
+}
+
+label {
+    font-size: 70px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: myfont;
+}
+#mealchoice{
+    border: 3px solid white;
+    border-radius: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
