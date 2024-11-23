@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read page</title>
+    <link rel="stylesheet" href="/stylesheets/stylee.css">
+</head>
+<body>
+    <script>
+        
+    </script>
+    <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Back to Home</a>
+    <h3>Meal Of the Day:</h3>
+        <% users.forEach(function(user) { %> 
+        <div class="container">
+            <div class="card">
+                <img src="/images/meal.jpg" alt="meal image" width="70%" height="150px;">
+            </div>
+            <div class="details">
+                <h5><%= user.burger %></h5>
+                <h5><%= user.beverage %></h5>
+                <h5><%= user.dessert %></h5>
+
+                <div class="operation">
+                    <a href="" style="color: cadetblue;">Edit Meal</a>
+                    <a href="/delete/<%= user._id %>" style="color: red;">Delete Meal</a>
+                </div>
+            </div>
+        </div> 
+        <% }) %>
+       
+
+            
+        </body>
+        </html>
