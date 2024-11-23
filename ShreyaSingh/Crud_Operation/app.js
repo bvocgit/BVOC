@@ -2,12 +2,11 @@ const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 
-// Middleware
-app.use(express.json()); // For JSON requests
-app.use(express.urlencoded({ extended: true })); // For form submissions
-app.use(express.static('public')); // For static files like CSS
-app.set('view engine', 'ejs'); // Setting EJS as the view engine
 
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
+app.use(express.static('public')); 
+app.set('view engine', 'ejs'); 
 // MySQL connection
 const db = mysql.createConnection({
   host: 'localhost',
