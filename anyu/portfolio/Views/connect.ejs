@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="/sheets/connect.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/connect">Connect</a>
+    </nav>
+
+    <div class="back" id="backHeader">
+        <h1>CONNECT</h1>
+    </div>
+
+    <div class="container" id="connectBox">
+        <h1 class="header" style="font-family: poppins, sans-serif;">Connect with Me</h1>
+        <form action="/send-email" method="POST">
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/who_anuu/?igsh=Y3R3NmtsZnJmdjU%3D" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/anu-pandey-840821271/" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function showConnectBox() {
+            const backHeader = document.getElementById('backHeader');
+            const connectBox = document.getElementById('connectBox');
+
+            setTimeout(() => {
+                backHeader.style.display = 'none';
+                connectBox.classList.add('show'); 
+            }, 1500); 
+        }
+
+        setTimeout(showConnectBox, 1000);
+    </script>
+</body>
+
+</html>

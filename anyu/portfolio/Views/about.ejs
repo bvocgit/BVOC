@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/sheets/about.css">
+
+</head>
+<body>
+  <nav style="z-index: 1000; position: relative;">
+    <pre><a href="/">Home</a> <a href="/projects">Projects</a> <a href="/connect">Connect</a></pre>
+</nav>
+
+<div class="about-container">
+    <div class="about-image">
+      <img src="/images/pfp.jpeg" alt="Profile Picture">
+    </div>
+    <div class="about-content">
+      <h1>About Me</h1>
+      <p>What’s up? I’m Anu, </p>
+      <p>your go-to Junior Web Developer! I thrive on challenges and love crafting unique websites that stand out in the crowd</p>
+      <p>Join me in my quest to make the web a more vibrant place!</p>
+      <div class="tabtitles">   
+        <pre style="display: flex;">
+        <a id="skills-link" onclick="opentab('skills')" class="tab-links">Skills</a>  
+        <a id="experience-link" class="tab-links" onclick="opentab('experience')">Experience</a> 
+        <a id="education-link" class="tab-links" onclick="opentab('education')">Education</a>
+        </pre>
+    </div>
+
+   
+    <div id="skills" class="tabcontent active-tab">
+      <ul>
+        <li>Programming<br><p>Basics of Java, C++ and Python</p></li>
+        <li>Frameworks<br>
+        <p>Angular , Express js and Django</p></li>
+        <li>Database<br>
+        <p>Mysql and MongoDb</p></li>
+        
+      </ul>
+    </div>
+
+    <div id="experience" class="tabcontent">
+      <ul>
+        <li>2023<br><p>Contributed to GDSC kalindi as Tech Member.</p></li>
+        <li>2023<br><p>Assisted in Cms in an e-commerce website.</p></li>
+        <li>2022<br><p>Worked for College Tech Society as Tech member in Marketing and Advertisements</p></li>
+      </ul>
+    </div>
+
+    <div id="education" class="tabcontent">
+      <ul>
+        <li>2022-2026<br><p>Graduating in Bachelor's of Vocational Studies in Web Designing From University of Delhi</p></li>
+        <li>2022<br><p>Passed Class 12th From Shivbrat Singh Children Academy</p></li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tabcontent");
+
+    function opentab(tabname) {
+        
+        for (let tabcontent of tabcontents) {
+            tabcontent.classList.remove('active-tab');
+        }
+
+       
+        for (let tablink of tablinks) {
+            tablink.classList.remove('active-tab');
+        }
+
+        
+        document.getElementById(tabname).classList.add('active-tab');
+        event.currentTarget.classList.add('active-tab');
+    }
+  </script>
+</body>
+</html>

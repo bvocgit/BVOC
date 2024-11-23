@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sheets/styleproj.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    <nav style="z-index: 1000; position: relative;">
+        <pre><a href="/">Home</a><a href="/projects">Projects</a><a href="/connect">Connect</a></pre>
+    </nav>
+    
+    <div class="back">
+        <h1>PROJECTS</h1>
+    </div>
+
+    <main id="projectContent">
+        <section class="project">
+            <div class="project-content">
+                <div class="image-container">
+                    <img class="image" src="/images/project1.jpg" alt="Project Image">
+
+                    <a href="<%= githubLink %>" target="_blank">
+                        <div class="image"></div>
+                        <div class="image-overlay"></div>
+                    </a>
+                </div>
+                <div class="project-description">
+                    <p style="font-size: 24px; font-weight: 400;"> MEAL SAVING WEB APP</p>
+                    <p>This meal-saving app, built with HTML, CSS, Express.js, Node.js, and MongoDB, lets users easily save and manage meal combos. It supports basic CRUD operations, allowing users to create, view, update, and delete meals with a smooth, user-friendly interface.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project">
+            <div class="project-content reverse">
+                <div class="project-description">
+                    <p style="font-size: 24px; font-weight: 400;">HEX COLOR CODE GENERATOR</p><p>Hex Color Code Generator using HTML, CSS, and JavaScript. It generates random hex codes, and with a click, the code gets copied to your clipboard, ready to paste anywhere you need!</p>
+                </div>
+                <div class="image-container">
+                    <img class="image" src="/images/project2.0.png" alt="Project Image">
+                    <a href="https://github.com/anuucodes/BackenedProject" target="_blank">
+                        <div class="image"></div>
+                        <div class="image-overlay"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="github-link">
+            <a href="https://github.com/anuucodes" target="_blank">Visit my GitHub</a>
+        </div>
+    </main>
+
+    <script>
+    
+        setTimeout(() => {
+            document.querySelector('.back').style.display = 'none'; 
+            document.getElementById('projectContent').classList.add('show'); 
+        }, 3000); 
+    </script>
+</body>
+</html>
