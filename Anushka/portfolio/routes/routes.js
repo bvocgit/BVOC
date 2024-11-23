@@ -1,10 +1,8 @@
 import express from 'express';
-import { homeController } from '../controllers/homeController.js';
+import { homeController} from '../controller/homeController.js';
 
 const routes = express.Router();
 
-routes.get('/', homeController);
-console.log(homeController); // Should log the function definition
-
+routes.get('/', homeController)
 
 export default routes;
