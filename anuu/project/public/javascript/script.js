@@ -1,1 +1,0 @@
-alert("hey press ok to continue")
