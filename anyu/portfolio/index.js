@@ -17,12 +17,16 @@ app.get('/', function (req, res) {
 
 app.get('/projects', function (req, res) {
     const githubLink = 'https://github.com/anuucodes';
-    res.render('project',{githubLink});
+    const backened_project='https://github.com/anuucodes/BackenedProject';
+    const hexcolor_code='https://github.com/anuucodes/Color-code-generator';
+    res.render('project',{githubLink , backened_project, hexcolor_code});
 });
 
 
 app.get('/connect', function (req, res) {
-    res.render('connect');
+    const instagram_link='https://www.instagram.com/who_anuu/?igsh=Y3R3NmtsZnJmdjU%3D';
+    const linkedIn='https://www.linkedin.com/in/anu-pandey-840821271/';
+    res.render('connect',{instagram_link,linkedIn});
 });
 
 
@@ -32,5 +36,4 @@ app.get('/about', function (req, res) {
 
 app.listen(1000, () => {
     console.log('Server is running on port 1000');
-    console.log(process.env.USER_MAIL);
 });
