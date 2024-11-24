@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myPortfolio</title>
+  <style>
+
+body, h1, h2, h3, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+header {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1rem;
+}
+
+/* Navigation */
+nav {
+  background: #444;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00bcd4;
+}
+
+
+section {
+  padding: 2rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+
+.project {
+  margin-bottom: 1.5rem;
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  color: #00bcd4;
+}
+
+
+section#contact ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+section#contact ul li {
+  margin-bottom: 0.5rem;
+}
+
+section#contact ul li a {
+  color: #00bcd4;
+}
+
+
+footer {
+  text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1> Garvita Aggarwal</h1>
+      <p>Web Developer and Designer</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p> I am passionate web Developer who aims to learn and develop amazing software. Hope working with me you have a great experience.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <P><strong>Project 1 -</strong>Clone website of Kalindi college</P>
+      <P><strong>Project 2 -</strong>Online exam portal(OEP).</P>
+      <P><strong>Project 3 -</strong>CRUD app</P>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Feel free to reach out for collaborations or inquiries.</p>
+      <ul>
+        <li>Email: <%= email %></li>
+        <li>Phone: NOt Valid: +215678999</li>
+        
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>2024. <%= name %>.All rights reserved.</p>
+  </footer>
+</body>
+</html>

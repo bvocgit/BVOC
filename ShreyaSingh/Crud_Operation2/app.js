@@ -2,9 +2,9 @@ const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 
-app.use(express.json());           // For JSON requests.
-app.use(express.urlencoded({ extended: true })); // For form submissions.
-app.use(express.static('public')); // For static files like CSS.
+app.use(express.json());      
+app.use(express.urlencoded({ extended: true })); 
+app.use(express.static('public')); 
 app.set('view engine', 'ejs');    // Setting EJS as the view engine.
 
 // MySQL connection
@@ -20,7 +20,7 @@ db.connect((err) => {
   console.log('Connected to MySQL');
 });
 
-// Route to render the homepage with tasks
+
 app.get('/', (req, res) => {
   const sql = 'SELECT * FROM tasks ORDER BY created_at DESC';
   db.query(sql, (err, results) => {
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Route to add a new task
+
 app.post('/tasks', (req, res) => {
   const { task} = req.body;
   if (!task) {
@@ -42,7 +42,7 @@ app.post('/tasks', (req, res) => {
   });
 });
 
-// Route to delete a task
+
 app.post('/tasks/delete/:id', (req, res) => {
   const { id } = req.params;
   const sql = 'DELETE FROM tasks WHERE id = ?';
@@ -52,7 +52,6 @@ app.post('/tasks/delete/:id', (req, res) => {
   });
 });
 
-// Start the server
 app.listen(8082, () => {
   console.log('Server started on port 8082');
 });

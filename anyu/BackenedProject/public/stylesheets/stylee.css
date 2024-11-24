@@ -1,0 +1,63 @@
+@font-face {
+    font-family: myfont;
+    src: url(/font.ttf.otf);
+}
+
+* {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    font-size: 30px;
+    font-family: myfont;
+    color: coral;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+h3 {
+    font-family: myfont;
+    font-size: 80px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.details {
+    font-size: 20px;
+    color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container {
+    display: flex;
+    flex-wrap:nowrap; 
+    gap: 20px; 
+    padding: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: black;
+    overflow-x: auto; 
+}
+
+.card {
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 15px;
+    width: 300px; 
+    text-align: center;
+    flex-shrink: 0; 
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px; 
+}

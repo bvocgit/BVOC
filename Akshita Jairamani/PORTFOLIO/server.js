@@ -10,7 +10,7 @@ app.set('view engine','ejs');
 
 app.get('/insert',(req,res) =>{
    // res.status(200);
-   // res.write('divya');
+   // res.write('akshita');
    res.render('portfolio.ejs',{
     'text':''
    })

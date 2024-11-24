@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        .floating-burger {
+            width: 700px; 
+            margin: 20px auto; 
+            animation: float 3s ease-in-out infinite; 
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="font-family: myfont; font-size: 150px; margin-bottom: 
+        0px;">BURGER PRINCE</p>
+        <p style="font-family: myfont; font-size: 50px; color:aliceblue; margin-top: 0px;">Born to be Famous, Forced to be hidden.</p>
+        <img src="/images/view-3d-burger-with-poly-effect (1).png" alt="delicious burger image" class="floating-burger">
+        <a href="#mealchoice"><button class="button">Create you own meal</button></a>
+    </div>
+
+    <div id="mealchoice">
+        <p style="font-family: myfont; font-size: 80px; color: sandybrown; font-size: 100px;">Choose the meal</p>
+            <form action="/create" method="post">
+                <label for="burger">Burger</label>
+                <select id="burger" name="burger" placeholder="burger" >
+                    <option value="shopper">Shopper Burger</option>
+                    <option value="double-cheese">Double Cheese Burger</option>
+                    <option value="aloo-tikki">Aloo Tikki Burger</option>
+                    <option value="up-special">UP Special Burger (Litti Chokha Hidden)</option>
+                    <option value="bigdwag">Bigdawg Burger</option>
+                </select>
+        
+                <label for="beverage">Beverage</label>
+                <select id="beverage" name="beverage" placeholder="beverage">
+                    <option value="masala-chai">Masala Chai</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="nimbu-paani">Nimbu Paani</option>
+                    <option value="coldrink">Coldrink</option>
+                    <option value="bisleri-paani">Bisleri Paani</option>
+                </select>
+        
+                <label for="dessert">Dessert</label>
+                <select id="dessert" name="dessert" placeholder="dessert" >
+                    <option value="choco-lava">Choco Lava Cake</option>
+                    <option value="chocolate-sundae">Chocolate Sundae</option>
+                    <option value="butterscotch">Butterscotch Ice Cream</option>
+                    <option value="muffins">Muffins</option>
+                    <option value="pasty">Pasty</option>
+                </select>
+                <br> 
+                <br>
+                <button type="submit" class="button" onclick="created()"> Create meal</button>
+            <a href="/read" style="color:orangered; font-family: myfont; font-size: 50px; font-weight: 400;">Show my meal</a>
+                
+
+                </select>
+
+                
+
+        </form>
+    </div>
+    <script>
+        function created(){
+            alert("Meal is created!");
+        }
+    </script>
+    
+</body>
+</html>
+    
+
+
+
+

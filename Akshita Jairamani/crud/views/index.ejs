@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Contact List</h1>
+    
+    <!-- Add Contact Form -->
+    <div class="container">
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="contact" placeholder="Contact" required />
+            <button type="submit">Add Contact</button>
+        </form>
+
+        <!-- Contacts Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% contacts.forEach((contact, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= contact.name %></td>
+                        <td><%= contact.email %></td>
+                        <td><%= contact.contact %></td>
+                        <td>
+                            <form action="/edit/<%= contact.id %>" method="GET" style="display:inline;">
+                                <button type="submit">Edit</button>
+                            </form>
+                            <form action="/delete/<%= contact.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>

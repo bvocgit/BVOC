@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  feedback-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Mapping container port to host port
+    environment:
+      MONGO_URI : "mongodb+srv://Divya0405:Divya0405@meradb.z2dszqk.mongodb.net/"
+      NODE_ENV: "development"
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    command: "npm start"

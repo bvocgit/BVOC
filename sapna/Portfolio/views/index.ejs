@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/public/styles.css">
+  <title>Your Name | Portfolio</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: 10px;
+  }
+  
+  .nav-links li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073e6;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  header, section, footer {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .nav-links li a:hover, .btn:hover {
+    background-color: #005bb5;
+  }
+  
+  nav {
+    background: #0073e6;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #0073e6, #00bfff);
+    color: white;
+    padding: 80px 20px;
+  }
+  
+  .hero h1 span {
+    color: #ffeb3b;
+  }
+  
+  .about {
+    background-color: #f4f4f4;
+  }
+  
+  
+  .project-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .project {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: calc(50% - 20px);
+  }
+  
+  .project a {
+    color: #ffeb3b;
+  }
+  
+  
+  .skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .skills li {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    width: fit-content;
+  }
+  
+  /* Contact Section */
+  .contact form input, .contact form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .contact form button {
+    margin-top: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px;
+  }
+  
+  </style>
+</head>
+<body>
+  
+  <nav>
+    <div class="logo"> </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <header class="main">
+    <h1>Hello, I'm <span><%= locals.Name %></span></h1>
+    <p> <span><%= locals.Profession %></span></p>
+    <a href="#projects" class="btn">My Listed Projects </a>
+  </header>
+
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm currently a undergraduate student pursuing <span><%= locals.Course %> </span> at <span><%= locals.education %> </span>. I'm a <span><%= locals.Profession %> </span> with great passion for coding. I have manic love for great high loaded projects. Also i am an easy going person who can fir perfectly in any team.</p>
+  </section>
+
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project">
+        <h3><%= locals.Project1 %></h3>
+        <p>Create a website of college with great functionality .</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+      <div class="project">
+        <h3><%= locals.Project2 %></h3>
+        <p>Information related to country like population,city etc  using API.</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Mysql</li>
+      <li>Node.js</li>
+      <li>DSA</li>
+      <li>Git</li>
+      
+    </ul>
+  </section>
+
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/your-email" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      }); </script>
+</body>
+</html>
+
+ 

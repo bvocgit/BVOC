@@ -13,17 +13,10 @@ mongoose.connect("mongodb+srv://Divya0405:Divya0405@meradb.z2dszqk.mongodb.net/"
     console.log("Error connecting to MongoDB Atlas :", err);
 });
 
-// var feedbackSchema = new mongoose.Schema({
-//     name : String,
-//     email : String,
-//     feedback : String,
-//     category : String,
-//     confidential : Boolean
-// });
-
-// var Feedback = mongoose.model('Feedback', feedbackSchema);
 
 var app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
@@ -37,54 +30,15 @@ app.get('/', (req, res) => {
     });
 });
 
-
+//to submit Feedbacks
 app.post('/submit-feedback', async (req, res) => {
     try {
         var { name, email, feedback, category, confidential } = req.body;
 
-        // let fbData = {
-        //     feedback : feedback,
-        //     category : category,
-        //     confidential : confidential === 'confidential'
-        // };
-
-        // if (confidential !== 'confidential') {
-        //     fbData.name = name;
-        //     fbData.email = email;
-        // } else {
-        //     fbData.email = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-
-        // }
-
-        // var newFeedback = new Feedback(fbData);
-        // newFeedback.save((err) => {
-        //     if (err) {
-        //         res.send("Error saving feedback !");
-        //     }
-        //     else {
-        //         res.send("Feedback submitted successfully !");
-        //     }
-        // });
-
-        // var fbData = new Feedback({
-        //     name : confidential === 'confidential' ? undefined : name,
-        //     email : confidential === 'confidential' ? undefined : email,
-        //     feedback : feedback,
-        //     category : category,
-        //     confidential : confidential === 'confidential'
-        // });
-
-        // fbData.save((err) => {
-        //     if (err) {
-        //         res.send("Error saving feedback !");
-        //     }
-        //     else {
-        //         res.send("Feedback submitted successfully !");
-        //     }
-
+       
         if (confidential === 'confidential') {
-            // If confidential, derive the email from backend (assuming some user authentication is in place)
-            const userEmail = req.user ? req.user.email : 'unknown@example.com'; // Replace with your auth logic
+            
+            const userEmail = req.user ? req.user.email : 'unknown@example.com'; 
             const fbData = {
                 category,
                 feedback,
@@ -114,5 +68,41 @@ app.post('/submit-feedback', async (req, res) => {
         res.status(500).send('Error submitting feedback');
     }
 });
+
+// To show all feedbacks
+app.get('/show-feedback', async (req, res) => {
+    try {
+        const feedbacks = await Feedback.find(); 
+        res.render('show_feedback.ejs', { feedbacks });
+    } catch (err) {
+        console.error('Error fetching feedback data:', err);
+        res.status(500).send('Error retrieving feedback data');
+    }
+});
+
+// To delete Feedback
+app.post('/delete-feedback', async (req, res) => {
+    try {
+        const { id } = req.body;
+        await Feedback.findByIdAndDelete(id); // Delete feedback by ID
+        res.redirect('/show-feedback');
+    } catch (err) {
+        console.error('Error deleting feedback:', err);
+        res.status(500).send('Error deleting feedback');
+    }
+});
+
+// To update Feedback
+app.post('/update-feedback', async (req, res) => {
+    try {
+        const { id, feedback } = req.body;
+        await Feedback.findByIdAndUpdate(id, { feedback }); // Update feedback content
+        res.redirect('/show-feedback');
+    } catch (err) {
+        console.error('Error updating feedback:', err);
+        res.status(500).send('Error updating feedback');
+    }
+});
+
 
 app.listen(8080); 
