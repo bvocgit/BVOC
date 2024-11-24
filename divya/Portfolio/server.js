@@ -12,7 +12,11 @@ app.get('/',(req,res) => {
     //     'text': 'It is coming from backend'
     // });
     res.render('divya.ejs', {
-        'text': ""
+        'text': "",
+        'kalindi_project': "https://github.com/Kulanshu-sharma/Kalindi",
+        'linkedIn' : "https://www.linkedin.com/in/divya-gupta-9262b82a2",
+        'GitHub' : "https://github.com/DivyaGupta04",
+        'DockerHub' : "https://hub.docker.com/u/itsmedivya0405"
     });
     // res.end();
 });
