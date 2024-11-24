@@ -14,7 +14,6 @@ mongoose.connect("mongodb+srv://Divya0405:Divya0405@meradb.z2dszqk.mongodb.net/"
 });
 
 
-
 var app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
