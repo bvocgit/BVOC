@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Application</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; display: flex; justify-content: space-between; }
+        input, button { margin: 10px 0; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>CRUD Application</h1>
+    <form id="itemForm">
+        <input type="text" id="itemName" placeholder="Item Name" required>
+        <button type="submit">Add Item</button>
+    </form>
+    <ul id="itemList"></ul>
+
+    <script>
+        async function loadItems() {
+            const response = await fetch('/api/items');
+            const items = await response.json();
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = ''; // Clear existing items
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${item.name} 
+                    <div>
+                        <button onclick="deleteItem('${item._id}')">Delete</button>
+                    </div>
+                `;
+                itemList.appendChild(li);
+            });
+        }
+
+        document.getElementById('itemForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const itemName = document.getElementById('itemName').value;
+            await fetch('/api/items', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: itemName })
+            });
+            document.getElementById('itemName').value = '';
+            loadItems();
+        });
+
+        async function deleteItem(id) {
+            await fetch(`/api/items/${id}`, { method: 'DELETE' });
+            loadItems();
+        }
+
+        // Load items on page load
+        loadItems();
+    </script>
+</body>
+</html>
